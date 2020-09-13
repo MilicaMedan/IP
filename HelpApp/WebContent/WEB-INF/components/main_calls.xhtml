@@ -1,0 +1,138 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>+
+</h:head>
+<ui:composition>
+<h:panelGroup layout="block"
+		style="height:10%; width: 100%; background-color: #CCD1D1; float:right;">
+		<style>
+.addBtn {
+	height: 5vh;
+	width: 5vh;
+	padding: 0;
+	margin: 0;
+	margin-top:2vh;
+	margin-right:10px;
+	border: none;
+	background-color: #2471A3;
+	border-radius: 50%;
+	color: white;
+	line-height:5vh;
+	text-align: center;
+	font-size: 5vh;
+	font: bold;
+	float: right;
+	cursor: pointer;
+}
+	</style>
+		<h:form>
+			<h:commandButton action="#{userBean.addHelpCall}" styleClass="addBtn"
+				id="addBtn" value="+" />
+		</h:form>
+	</h:panelGroup>
+	<h:panelGroup layout="block" id="pane"  style="height:100%; width: 100%; background-color: #CCD1D1; float:right; overflow:scroll;">
+		<style>
+			.table{
+				width: 100%;
+			}
+			.header{
+				width: auto;
+				background-color: #2471A3;
+				border-style: none;
+				border-radius:30px 30px 5px 5px;
+				color: #BFC9CA;
+				font-size:1vw;
+			}
+			
+			.column{
+				width: 14%;
+				background-color: #EBDEF0;
+				color: #2471A3;
+				font-size:1vw;
+			}
+			.column1{
+				width: 5%;
+				background-color: #EBDEF0;
+				color: #2471A3;
+				font-size:1vw;
+			}
+			
+			.link{
+				font-style: normal;
+				color: #2471A3;
+				font-size:1vw;
+			}
+			
+			.link:hover{
+				font-style: normal;
+				color: #AED6F1;
+			}
+		</style>
+		<h:form>
+			<h:dataTable value="#{helpcallbean.calls}"  var="dataItem" styleClass="table" columnClasses="column,column,column,column,column,column,column,column1" headerClass="header">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Title" />
+					</f:facet>
+					<h:outputText value="#{dataItem.title}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Location" />
+					</f:facet>
+					<h:outputText value="#{dataItem.location}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Date and time" />
+					</f:facet>
+					<h:outputText value="#{dataItem.time}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Description" />
+					</f:facet>
+					<h:outputText value="#{dataItem.description}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Image url" />
+					</f:facet>
+					<h:outputText value="#{dataItem.pictureSrc}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Category" />
+					</f:facet>
+					<h:outputText value="#{dataItem.categoryName}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+					<h:outputText value="Fake help call?" />
+					</f:facet>
+						<h:commandLink value="Report as fake help call" action="#{helpcallbean.reportHelpCall}" rendered="#{ not dataItem.isFalseNews()}" styleClass="link">
+							<f:setPropertyActionListener target="#{helpcallbean.call}" value="#{dataItem}" />
+						</h:commandLink>
+						<h:outputText value="reported" rendered="#{ dataItem.isFalseNews()}"  />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+					
+					</f:facet>
+						<h:commandLink value="Block" action="#{helpcallbean.deleteHelpCall}"  styleClass="link">
+							<f:setPropertyActionListener target="#{helpcallbean.call}" value="#{dataItem}" />
+						</h:commandLink>
+				</h:column>
+					
+					
+					
+			</h:dataTable>
+		</h:form>
+	</h:panelGroup>
+</ui:composition>
+
+</html>

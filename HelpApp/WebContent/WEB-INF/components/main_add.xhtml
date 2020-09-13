@@ -1,0 +1,147 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+</h:head>
+<ui:composition>
+	<h:panelGroup layout="block"
+		style="height:10%; width: 100%; background-color: #CCD1D1; float:right;">
+		<style>
+.backBtn {
+	margin: 0;
+	margin-top: 2vh;
+	float: left;
+	padding: 0;
+	border-radius: 50%;
+	border: none;
+	height: 5vh;
+	width: 5vh;
+	background: url(resource/css/back.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	outline: none;
+	background-color: #F4F9FF;
+	
+}
+</style>
+		<h:form>
+			<h:commandButton action="#{userBean.helpCalls}" styleClass="backBtn"
+				id="backBtn" />
+		</h:form>
+	</h:panelGroup>
+	<h:panelGroup layout="block"
+		style="height:100%; width: 100%; background-color: #CCD1D1; float:right;">
+		<style>
+.p {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #2471A3;
+	font-size:1vw;
+}
+
+.a {
+	width: 50%;
+	margin-bottom: 4vh;
+	border: none;
+	border-bottom: 1px solid #2471A3;
+	background: transparent;
+	outline: none;
+	height: 4vh;
+	color: #2471A3;
+	font-size:1vw;
+}
+
+.b {
+	width: 25%;
+	margin: 0;
+	border: none;
+	outline: none;
+	height: 6vh;
+	background: #154360;
+	color: #fff;
+	font-size:1.5vw;
+	border-radius: 20px;
+	float:right;
+}
+
+.b:hover {
+	cursor: pointer;
+	background: #424949;
+	color: #fff;
+}
+
+.select {
+	width:50%;
+	height: 4vh;
+	color: #2471A3;
+	background-color: transparent;
+	border-color: #2471A3;
+	font-size: 70%;
+}
+
+.s {
+	color: #2471A3;
+	background-color: transparent;
+	border: none;
+	font-size:1vw;
+}
+</style>
+		<h:form style="width:75%; height:100%; margin-left:25%;">
+			<h:outputText value="Title: *" styleClass="p" />
+			<br />
+			<h:inputText id="title" required="true" requiredMessage="Title is required!"
+				value="${helpcallbean.call.title}" styleClass="a"></h:inputText>
+			<br />
+			<h:outputText value="Date and time: *" styleClass="p" />
+			<br />
+			<p:calendar id="datetime" pattern="MM/dd/yyyy HH:mm:ss" placeholder="MM/dd/yyyy HH:mm:ss"
+                    required="true" requiredMessage="Date is required!"
+                    value="#{helpcallbean.call.time}" inputStyle="width: 50%;
+	margin-bottom: 4vh;
+	border: none;
+	border-bottom: 1px solid #2471A3;
+	background: transparent;
+	outline: none;
+	height: 4vh;
+	color: #2471A3;
+	font-size:1vw;">
+            </p:calendar>
+			
+			
+			<br />
+			<h:outputText value="Location: *" styleClass="p" />
+			<br />
+			<h:inputText id="location" value="${helpcallbean.call.location}"
+				styleClass="a" required="true" requiredMessage="Location is required!"></h:inputText>
+			<br />
+			<h:outputText value="Description: *" styleClass="p" />
+			<br />
+			<h:inputText id="description"
+				value="${helpcallbean.call.description}" styleClass="a"
+				required="true" requiredMessage="Description is required!"></h:inputText>
+			<br />
+			<h:outputText value="Picture url:" styleClass="p" />
+			<br />
+			<h:inputText id="url" value="${helpcallbean.call.pictureSrc}"
+				styleClass="a"></h:inputText>
+			<br />
+			<h:outputText value="Choose category: *" styleClass="p" />
+			<br />
+			<br />
+			<h:selectOneMenu value="${helpcallbean.call.categoryId}" id="menu" styleClass="select" required="true">
+				<f:selectItems value="#{helpcallbean.categories}" styleClass="s"></f:selectItems>
+			</h:selectOneMenu>
+			<br />
+				<h:outputText value="#{helpcallbean.message}" styleClass="p" style="color: #A93226;"></h:outputText>
+			<br />
+			<h:commandButton value="Save" action="#{helpcallbean.addCall}"
+				styleClass="b"></h:commandButton>
+		</h:form>
+	</h:panelGroup>
+
+</ui:composition>
+</html>

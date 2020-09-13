@@ -1,0 +1,135 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Admin app</title>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<ui:composition>
+	<h:panelGroup layout="block" style="width:100%; height:100%;">
+		<h:panelGroup layout="block"
+			style="height:10%; width: 100%; background-color: #AED6F1; float:top; font-size: 1.5vw;">
+			<style>
+.username {
+	margin-top: 2vh;
+	padding: 0;
+	font: italic small-caps bold 100% Georgia, serif;
+	color: #2471A3;
+	float: left;
+	text-align: center;
+}
+
+.settings {
+	height: 5vh;
+	width: 2.5vw;
+	margin-top: 2vh;
+	margin-right: 10px;
+	padding: 0;
+	background-color: #AED6F1;
+	float: right;
+	background: url(resource/css/settings.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border: none;
+	outline: none;
+}
+
+.label {
+	width: 100%;
+	height: 50%;
+	padding: 0;
+	font: italic small-caps bold 100% Georgia, serif;
+	color: #BFC9CA;
+	text-align: center;
+	float: right;
+}
+
+.number {
+	width: 100%;
+	height: 50%;
+	padding: 0;
+	font: italic small-caps bold 200% Georgia, serif;
+	color: #BFC9CA;
+	text-align: center;
+	float: right;
+}
+</style>
+
+			<h:form>
+				<h:outputText value="${userBean.numberOfLogin}"
+					styleClass="username" />
+				<h:commandButton action="#{userBean.logout}" styleClass="settings" />
+
+
+
+					<h:panelGroup layout="block"
+						style="height:7vh; width: 10vw; margin-top: 2vh; margin-right: 50px; padding: 0; 
+						background-color : #2471A3; float:right; border-style: none; border-radius:30px 30px 30px 30px;
+						font-size: 0.8vw; ">
+
+						<h:outputText value="${mainBean.numberOfUsers}"
+							styleClass="number" />
+						<br />
+						<h:outputText value="Registrated users" styleClass="label" />
+					</h:panelGroup>
+
+					<h:panelGroup layout="block"
+						style="height:7vh; width: 10vw; margin-top: 2vh; margin-right: 50px; padding: 0; 
+						background-color : #2471A3; float:right; border-style: none; border-radius:30px 30px 30px 30px;
+						font-size: 0.8vw; ">
+
+						<h:outputText value="${mainBean.numberOfLogedInUsers}"
+							styleClass="number" />
+						<br />
+						<h:outputText value="Loged users" styleClass="label" />
+					</h:panelGroup>
+			</h:form>
+		</h:panelGroup>
+
+
+		<h:panelGroup layout="block"
+			style="height:90%; width: 15%; background-color: #AED6F1; float:left; font-size: 1vw;">
+
+			<style>
+.b {
+	width: 100%;
+	margin-bottom: 1vh;
+	border: none;
+	outline: none;
+	height: 5vh;
+	background: #AED6F1;
+	color: #2471A3;
+	text-align: left;
+	font: italic small-caps bold 100% Georgia, serif;
+}
+
+.b:hover {
+	cursor: pointer;
+	color: #99A3A4;
+}
+</style>
+			<br />
+			<h:form>
+				<h:commandButton value="Registration requests"
+					action="#{mainBean.requests}" styleClass="b"></h:commandButton>
+				<h:commandButton value="Users" action="#{mainBean.users}"
+					styleClass="b"></h:commandButton>
+				<h:commandButton value="Posts" action="#{mainBean.posts}"
+					styleClass="b"></h:commandButton>
+				<h:commandButton value="Statistic" action="#{mainBean.statistic}"
+					styleClass="b"></h:commandButton>
+				<h:commandButton value="Manage categories" action="#{mainBean.categories}"
+					styleClass="b"></h:commandButton>
+			</h:form>
+
+		</h:panelGroup>
+		<h:panelGroup layout="block"
+			style="height:90%; width: 85%; background-color: #BFC9CA; float:right;">
+			<ui:insert name="table" />
+		</h:panelGroup>
+	</h:panelGroup>
+</ui:composition>
+</html>

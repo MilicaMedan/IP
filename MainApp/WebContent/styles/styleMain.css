@@ -1,0 +1,431 @@
+p {
+	text-align: center;
+	color: #2471A3;
+	font-size: 1.5vw;
+}
+
+.closeBtn {
+	height: 1.5vw;
+	width: 1.5vw;
+	padding: 0;
+	margin: 0;
+	border: none;
+	background-color: #2471A3;
+	border-radius: 50%;
+	font: bold;
+	color: #CCD1D1;
+	line-height: 1.5vw;
+	text-align: center;
+	font-size: 1.5vw;
+	float: right;
+}
+
+td {
+	width: 25%;
+}
+
+tr {
+	height: 8vh;
+}
+
+.commentBtn{
+	margin: 0;
+	margin-top: 2vh;
+	float: right;
+	padding: 0;
+	border-radius: 50%;
+	border: none;
+	width: 4vw;
+	height: 4vw;
+	background: url(comment.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	outline: none;
+	background-color: #F4F9FF;
+	
+}
+
+.backBtn{
+	margin: 0;
+	margin-top: 2vh;
+	float: left;
+	padding: 0;
+	border-radius: 50%;
+	border: none;
+	height: 5vh;
+	width: 5vh;
+	background: url(back.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	outline: none;
+	background-color: #F4F9FF;
+}
+
+
+.addBtn {
+	height: 5vh;
+	width: 5vh;
+	padding: 0;
+	margin: 0;
+	border: none;
+	background-color: #2471A3;
+	border-radius: 50%;
+	font: bold;
+	color: #CCD1D1;
+	line-height: 4vh;
+	text-align: center;
+	font-size: 2vw;
+	float: right;
+}
+
+.username {
+	margin: 0;
+	margin-top: 4vh;
+	margin-left: 2vw;
+	padding: 0;
+	font: italic small-caps bold 100% Georgia, serif;
+	color: #2471A3;
+	float: left;
+	text-align: center;
+}
+
+.notification {
+	background-color: #f8d7da;
+	display: none;
+	font-family: "Rimouski";
+}
+
+.postBox {
+	width: 100%;
+	height: auto;
+	background: #F4F9FF;
+	margin-bottom: 2vh;
+	border-radius: 20px;
+	font-size:1.5vw;
+}
+.notificationBox{
+	width: 100%;
+	height: 11vw;
+	background: #F4F9FF;
+	margin-bottom: 2vh;
+	border-radius: 20px;
+	font-size:1.5vw;
+}
+
+
+
+
+.p1 {
+	text-align: center;
+	color: #154360;
+	font: bold;
+	font-size: 1.5vw;
+}
+
+.p2 {
+	text-align: center;
+	color: #154360;
+	font: bold;
+	font-size: 1vw;
+}
+
+.weather-container {
+	width: 100%;
+	height: 25vh;
+	background-color: #F4F9FF;
+}
+
+.weather-icon {
+	width: 100%;
+	height: 5vw;
+}
+
+.weather-icon img {
+	display: block;
+	margin: 0;
+	width: 5vw;
+	height: 5vw;
+	margin-left: 9vw;
+}
+
+.temperature-value {
+	width: 100%;
+	height: 3vw;
+}
+
+.temperature-valueP {
+	padding: 0;
+	margin: 0;
+	color: #2471A3;
+	font-size: 2vw;
+	text-align: center;
+	cursor: pointer;
+	font-family: "Rimouski";
+}
+
+.temperature-valueP:hover {
+	
+}
+
+.temperature-value span {
+	font-size: 2vw;
+	font-family: "Rimouski";
+}
+
+.temperature-description {
+	width: 100%;
+	height: 2vw;
+	padding: 0;
+	margin: 0;
+}
+
+.temperature-descriptionP {
+	padding: 0;
+	margin: 0;
+	color: #2471A3;
+	text-align: center;
+	font-size: 1.2vw;
+	font-family: "Rimouski";
+}
+
+.location {
+	width: 100%;
+	height: 2vw;
+	padding: 0;
+	margin: 0;
+}
+
+.locationP {
+	padding: 0;
+	margin: 0;
+	color: #2471A3;
+	text-align: center;
+	font-size: 1.2vw;
+	font-family: "Rimouski";
+}
+
+.image {
+	margin: 0;
+	margin-top: 2vh;
+	float: left;
+	padding: 0;
+	border-radius: 50%;
+	border-color: #154360;
+	border: 2px solid #154360;
+	width: 3vw;
+	height: 3vw;
+}
+
+.settings {
+	height: 5vh;
+	width: 2.5vw;
+	float: right;
+	margin-top: 2vh;
+	margin-right: 10px;
+	padding: 0;
+	background-color: #D6EAF8;
+}
+
+.settings input[type="submit"] {
+	height: 5vh;
+	width: 2.5vw;
+	padding: 0;
+	background-color: #D6EAF8;
+	float: right;
+	background: url(settings.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border: none;
+	outline: none;
+}
+
+/* Style the tab */
+.tab {
+	overflow: hidden;
+	background-color: #CCD1D1;
+	height: 5vh;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+	height: 5vh;
+	width: 10vw;
+	font-size: 1.2vw;
+	line-height: 3vh; text-align : center; background-color : #2471A3;
+	color: #ddd;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	background-color: #2471A3;
+	text-align: center; background-color : #2471A3; color : #ddd; float :
+	left; border : none; outline : none; cursor : pointer; padding : 14px
+	16px; transition : 0.3s;
+	border-radius: 3vw 3vw 0px 0px;
+}
+
+
+
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color: #ddd;
+	color: #2471A3;
+	border: 1px solid #2471A3;
+	border-bottom: none;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+	overflow: hidden;
+	background-color: #ddd;
+	padding: 6px 12px;
+	height: 100%;
+	border: 1px solid #2471A3;
+}
+
+.file {
+	color: #154360;
+	height: 4vh;
+	width: 50%;
+}
+
+.imagesTableHeader {
+	height:100%;
+	width: 100%;
+	background-color: #2471A3;
+	border: none;
+	border-radius:  3vw 3vw 0px 0px;
+	color: #ddd;
+	font-size: 1.2vw;
+	line-height: 3vh; 
+	text-align : center;
+	outline: none;
+}
+.imagesTableRow{
+	height:100%;
+	width: 100%;
+	border: none;
+	color: #2471A3;
+	font-size: 1.2vw;
+	line-height: 3vh; 
+	text-align : left;
+	outline: none;
+	border-bottom: 1px solid #2471A3;
+}
+
+.commentBox {
+	width: 50%;
+	height:auto;
+	background: #F4F9FF;
+	margin-bottom: 2vh;
+	border-radius: 20px;
+}
+
+.newCommentBox{
+	width: 100%;
+	height:auto;
+	background: #F4F9FF;
+	margin-bottom: 2vh;
+	border-radius: 20px;
+	vertical-align:top;
+}
+
+
+.fileinputs {
+	height:80%;
+	width:100%;
+	margin:0;
+	margin-left:2vw;
+	position: relative;
+}
+
+.fakefile {
+	height:80%;
+	width:100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+.file1 {
+	height:80%;
+	width:80%;
+	margin:0;
+	margin-right:3vw;
+	position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity=0);
+	opacity: 0;
+	z-index: 2;
+	
+}
+
+.saveCommentBtn{
+	margin: 0;
+	margin-top: 2vh;
+	float: right;
+	padding: 0;
+	border-radius: 50%;
+	border: none;
+	width: 2vw;
+	height: 2vw;
+	background: url(send.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	outline: none;
+	background-color: #F4F9FF;
+}
+
+
+
+
+.multiselect {
+  width: 50%;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-size:1vw; 
+  color:#2471A3;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+ 
+}
+
+#checkboxes {
+  display: none;
+   
+}
+
+#checkboxes label {
+  display: block;
+  font-size:1vw; 
+  color:#2471A3;
+  font-weight: normal;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+
+
